@@ -1,5 +1,4 @@
-class Teachers
-  Controller < ApplicationController
+class TeachersController < ApplicationController
   def index
     if params[:category]
       @teachers = Teacher.where(category = params[:category])
@@ -25,7 +24,5 @@ class Teachers
 
   def delete
   end
-
-  def filter
-  end
+  
 end
