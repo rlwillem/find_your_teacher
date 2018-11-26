@@ -1,7 +1,9 @@
 class TeachersController < ApplicationController
   def index
-    if params[:category]
-      @teachers = Teacher.where(category = params[:category])
+    if params[:query].present?
+      subject = Subject.find_by(name: params[:query])
+
+      @teachers = subject.teachers
     else
       @teachers = Teacher.all
     end
@@ -24,5 +26,5 @@ class TeachersController < ApplicationController
 
   def delete
   end
-  
+
 end
