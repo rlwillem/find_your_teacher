@@ -1,0 +1,3 @@
+<div class="teacherName"><%= name = @teacher.name.split(" ").map { |name| name.capitalize }.join(" ") %></div>
+<div class="teacherDescription"><%= @teacher.description %></div>
+<div class="teacherPhoto"><%= cl_image_tag @teacher.picture, height: 400, width: 400 %></div>
