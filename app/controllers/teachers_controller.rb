@@ -8,6 +8,7 @@ class TeachersController < ApplicationController
   end
 
   def show
+    @teacher = Teacher.find(params[:id])
   end
 
   def new
@@ -24,5 +25,5 @@ class TeachersController < ApplicationController
 
   def delete
   end
-  
+
 end
