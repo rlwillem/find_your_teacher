@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
   has_many :appointments
-  has_one :teacher
+  has_many :teachers
   # until we need the below line:
   # has_many :teachers, through: :appointments
 end

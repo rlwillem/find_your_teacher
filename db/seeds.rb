@@ -6,9 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Seeding database"
+Appointment.destroy_all
 Teacher.destroy_all
 Subject.destroy_all
-Appointment.destroy_all
+
 languages_array = %w[dutch english french japanese chinese spanish]
 appointment_status = %w[pending accepted declined]
 puts "creating subjects"
@@ -21,11 +22,12 @@ puts "creating Teachers"
 30.times do
   teacher = Teacher.new(name: Faker::RickAndMorty.character, description: Faker::RickAndMorty.quote)
   teacher.subject = Subject.all.sample
+  teacher.user = User.last
   teacher.save
 end
 puts "creating appointments for user.first"
 5.times do
-  appointment = Appointment.new(status: appointment_status.sample)
+  appointment = Appointment.new(status: appointment_status.sample, date: DateTime.now)
   appointment.teacher = Teacher.all.sample
   appointment.user = User.first
   appointment.save
