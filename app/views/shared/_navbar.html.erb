@@ -1,5 +1,6 @@
 <div class="navbar-wagon">
   <!-- Logo -->
+
   <div class="left">
     <%= form_tag teachers_path, method: :get do %>
     <%= text_field_tag :query,params[:query],class: "form-control",placeholder: "Which Subject?" %>
@@ -14,7 +15,7 @@
     <!-- Links when logged in -->
     <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Appointments", appointments_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
