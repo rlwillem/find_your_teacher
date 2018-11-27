@@ -12,12 +12,18 @@
     <% @teachers.each do |teacher| %>
     <div class="col-xs-12 col-sm-3">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-        <div class="card-description">
-          <h2><%= "Learn #{teacher.subject.name.capitalize} From #{teacher.name}" %></h2>
-        </div>
         <%= image_tag "#{teacher.subject.name.capitalize}.png",height: 50, width: 55, :class => "style_image" %>
         <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
         <%= link_to "", teacher_path(teacher), class: 'card-link' %>
+      </div>
+      <div class="subject_c" style="color: rgb(165, 41, 3);">
+        <small class="_13dbiegr"><span style="color: rgb(165, 41, 3);">
+          <h3><%= teacher.subject.name.capitalize%></h3>
+        </span>
+        </small>
+      </div>
+      <div class="subject_d">
+        <h2><%= "Learn #{teacher.subject.name.capitalize} From #{teacher.name}" %></h2>
       </div>
     </div>
     <% end %>
