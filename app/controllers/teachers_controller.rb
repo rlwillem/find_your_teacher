@@ -1,7 +1,8 @@
 class TeachersController < ApplicationController
   def index
     if params[:query].present?
-      subject = Subject.find_by(name: params[:query])
+      lowercase = params[:query]
+      subject = Subject.find_by(name: lowercase.downcase)
 
       @teachers = subject.teachers
     else
