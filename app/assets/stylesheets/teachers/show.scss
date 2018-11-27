@@ -9,6 +9,11 @@
   margin-left: 10px;
 }
 
+.flex-subject-description {
+  flex: 0 1 600px;
+  width: 600px;
+}
+
 .teacher-name {
   margin-top: 20px;
   margin-left: 10px;
@@ -17,7 +22,6 @@
 
 .teacher-photo {
   border-radius: 50%;
-
 }
 
 .right-column {
@@ -31,8 +35,6 @@
 }
 
 .left-column {
-  flex: 0 1 600px;
-  width: 600px;
   padding-top: -10px;
   padding-left:15px;
   padding-right:15px;
