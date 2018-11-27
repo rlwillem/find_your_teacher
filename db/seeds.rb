@@ -27,7 +27,7 @@ puts "creating Teachers"
 end
 puts "creating appointments for user.first"
 5.times do
-  appointment = Appointment.new(status: appointment_status.sample, date: DateTime.now)
+  appointment = Appointment.new(status: appointment_status.sample, date: DateTime.now.strftime("%A, %d %b %Y %l:%M %p"))
   appointment.teacher = Teacher.all.sample
   appointment.user = User.first
   appointment.save
