@@ -32,4 +32,3 @@ puts "creating appointments for user.first"
   appointment.user = User.first
   appointment.save
 end
-
