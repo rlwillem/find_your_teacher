@@ -1,31 +1,44 @@
 .flex-container {
   display: flex;
   justify-content: center;
-  padding: 2%;
+  padding: 4%;
 }
 
 .flex-info {
-  flex: 0 0 350px;
-  position: sticky;
-  height: 100vh;
-  margin-left: 20px;
+  flex: 0 1 350px;
+  margin-left: 10px;
+}
+
+.teacher-name {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .teacher-photo {
+  border-radius: 50%;
 
 }
 
 .right-column {
-  border-top: 1px solid #000000;
-  padding: 6%;
-  text-align: center;
-  width: 350px;
-  height: 350px;
   top: 0;
-  margin-bottom: 20px;
+  border-top: 1px solid #000000;
+  padding-top: -10px;
+  padding-left:15px;
+  padding-right:15px;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 .left-column {
+  flex: 0 1 600px;
+  width: 600px;
+  padding-top: -10px;
+  padding-left:15px;
+  padding-right:15px;
   border-top: 1px solid #000000;
-  margin-bottom: 20px;
+}
+
+.book-now {
+  margin: 30px
 }
