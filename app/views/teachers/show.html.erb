@@ -1,3 +1,10 @@
-<div class="teacherName"><%= name = @teacher.name.split(" ").map { |name| name.capitalize }.join(" ") %></div>
-<div class="teacherDescription"><%= @teacher.description %></div>
-<div class="teacherPhoto"><%= cl_image_tag @teacher.picture, height: 400, width: 400 %></div>
+
+<div class="flex-container">
+  <div class="left-column"><%= @teacher.description %>  </div>
+  <div class="flex-info">
+    <div class="right-column"><img src="https://via.placeholder.com/300" class="teacher-photo"><br>
+      <%= name = @teacher.name.split(" ").map { |name| name.capitalize }.join(" ") %><%#=  cl_image_tag @teacher.picture, height: 400, width: 400 %></div>
+    <div class="right-column"><img src="https://via.placeholder.com/300" class="teacher-photo"></div>
+    <div class="right-column"><img src="https://via.placeholder.com/300" class="teacher-photo"></div>
+  </div>
+</div>

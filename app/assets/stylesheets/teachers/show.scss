@@ -1,0 +1,31 @@
+.flex-container {
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+}
+
+.flex-info {
+  flex: 0 0 350px;
+  position: sticky;
+  height: 100vh;
+  margin-left: 20px;
+}
+
+.teacher-photo {
+
+}
+
+.right-column {
+  border-top: 1px solid #000000;
+  padding: 6%;
+  text-align: center;
+  width: 350px;
+  height: 350px;
+  top: 0;
+  margin-bottom: 20px;
+}
+
+.left-column {
+  border-top: 1px solid #000000;
+  margin-bottom: 20px;
+}
