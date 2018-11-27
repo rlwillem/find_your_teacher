@@ -2,12 +2,7 @@
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3 col-sm-6">
       <h1>Log in as a Teacher</h1>
-      <%= simple_form_for [@teacher] do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.association :subject, as: :select %>
-      <%= f.submit "Become a Teacher", class: "btn btn-primary" %>
-      <% end %>
+      <%= render 'teachers-form' %>
     </div>
   </div>
 </div>
