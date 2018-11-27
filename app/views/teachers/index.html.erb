@@ -2,8 +2,7 @@
   <div class="banner-content">
     <h1>Find Your Teacher</h1>
     <p>You can learn from the local people!</p>
-    <%= link_to t(".Login", default: "Learn now!"), new_user_session_path, class: "btn btn-primary btn-lg" %>
-    <%= link_to t(".Login", default: "Teacher"), new_teacher_path, class: "btn btn-teacher btn-lg" %>
+    <%= link_to t(".Login", default: "Become a teacher!"), new_teacher_path, class: "btn btn-primary btn-lg" %>
   </div>
 </div>
 <div class="container">
@@ -11,7 +10,15 @@
   <div class="row">
     <% @teachers.each do |teacher| %>
     <div class="col-xs-12 col-sm-3">
+      <% if teacher.picture.model[:picture].nil? %>
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+             <% else %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path teacher.picture%>');">
+          <%end %>
+          
+          <div class="card-description">
+            <h2><%= "Learn #{teacher.subject.name.capitalize} From #{teacher.name}" %></h2>
+
         <%= image_tag "#{teacher.subject.name.capitalize}.png",height: 50, width: 55, :class => "style_image" %>
         <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
         <%= link_to "", teacher_path(teacher), class: 'card-link' %>
@@ -25,7 +32,11 @@
       <div class="subject_d">
         <h2><%= "Learn #{teacher.subject.name.capitalize} From #{teacher.name}" %></h2>
       </div>
+
+   
+ 
+      <% end %>
+
     </div>
-    <% end %>
   </div>
-</div>
+
