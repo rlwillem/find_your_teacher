@@ -10,7 +10,7 @@ Appointment.destroy_all
 Teacher.destroy_all
 Subject.destroy_all
 
-languages_array = %w[dutch english french japanese chinese spanish]
+languages_array = %w[Dutch English French Japanese Chinese Spanish]
 appointment_status = %w[pending accepted declined]
 puts "creating subjects"
 

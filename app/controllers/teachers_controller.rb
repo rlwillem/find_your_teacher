@@ -2,7 +2,7 @@ class TeachersController < ApplicationController
   def index
     if params[:query].present?
       lowercase = params[:query]
-      subject = Subject.find_by(name: lowercase.downcase)
+      subject = Subject.find_by(name: lowercase.downcase.capitalize)
 
       @teachers = subject.teachers
     else
@@ -15,9 +15,14 @@ class TeachersController < ApplicationController
   end
 
   def new
+    @teacher = Teacher.new
   end
 
   def create
+    @teacher = Teacher.new(teacher_params)
+    @teacher.user = current_user
+    @teacher.save
+    redirect_to teacher_path(@teacher)
   end
 
   def update
@@ -29,4 +34,9 @@ class TeachersController < ApplicationController
   def delete
   end
 
+    private
+
+  def teacher_params
+    params.require(:teacher).permit(:name, :description, :subject_id)
+  end
 end
