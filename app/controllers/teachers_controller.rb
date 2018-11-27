@@ -34,9 +34,9 @@ class TeachersController < ApplicationController
   def delete
   end
 
-    private
+  private
 
   def teacher_params
-    params.require(:teacher).permit(:name, :description, :subject_id)
+    params.require(:teacher).permit(:name, :description, :subject_id, :picture)
   end
 end

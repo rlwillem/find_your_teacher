@@ -9,16 +9,21 @@
   <h2>Popular Now</h2>
   <div class="row">
     <% @teachers.each do |teacher| %>
-      <div class="col-xs-12 col-sm-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+    <div class="col-xs-12 col-sm-3">
+      <% if teacher.picture.model[:picture].nil? %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+        <% else %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path teacher.picture%>');">
+          <%end %>
           <div class="card-description">
             <h2><%= "Learn #{teacher.subject.name.capitalize} From #{teacher.name}" %></h2>
           </div>
-          <%= image_tag "#{teacher.subject.name.capitalize}.png",height: 50, width: 55, :class => "style_image" %>
+          <%= image_tag "#{teacher.subject.name}.png", height: 50, width: 55, :class => "style_image" %>
           <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
           <%= link_to "", teacher_path(teacher), class: 'card-link' %>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+
