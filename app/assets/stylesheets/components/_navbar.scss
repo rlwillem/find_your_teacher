@@ -80,11 +80,20 @@
   border-top: 1px solid #E6E6E6;
 }
 
-.form-control {
-  height: 45px;
-}
-
 .left {
   display: flex;
+  height: 45px;
   width: 300px;
+  font-family: 'Courgette', cursive;
+}
+
+.text_with_button {
+  display: flex;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  background: none;
+  border: 0;
+  padding-left: 0;
 }
