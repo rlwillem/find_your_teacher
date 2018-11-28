@@ -1,0 +1,14 @@
+<%= simple_form_for(@teacher) do |f| %>
+<% if @teacher.errors.any? %>
+<div class="errors-container">
+  <ul>
+    <% @teacher.errors.full_messages.each do |message| %>
+    <li>
+      <%= message %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<!-- [...] all the fields -->
+<% end %>
