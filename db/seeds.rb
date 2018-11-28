@@ -12,6 +12,7 @@ Subject.destroy_all
 
 languages_array = %w[Dutch English French Japanese Chinese Spanish]
 appointment_status = %w[pending accepted declined]
+rate_array = [10,20,30,40,50]
 puts "creating subjects"
 
 languages_array.each do |language|
@@ -23,6 +24,7 @@ puts "creating Teachers"
   teacher = Teacher.new(name: Faker::RickAndMorty.character, description: Faker::RickAndMorty.quote)
   teacher.subject = Subject.all.sample
   teacher.user = User.last
+  teacher.rate = rate_array.sample
   teacher.save
 end
 puts "creating appointments for user.first"
