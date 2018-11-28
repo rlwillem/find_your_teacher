@@ -82,9 +82,22 @@
 
 .form-control {
   height: 45px;
+  width: 220px;
+  font-family: 'Courgette', cursive;
 }
 
 .left {
   display: flex;
   width: 300px;
+}
+
+.text_with_button {
+  display: flex;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  background: none;
+  border: 0;
+  padding-left: 0;
 }

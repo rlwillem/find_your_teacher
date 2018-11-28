@@ -19,13 +19,11 @@
           <%= image_tag "#{teacher.subject.name.downcase}.png",height: 50, width: 55, :class => "style_image" %>
           <%= link_to "", teacher_path(teacher), class: 'card-link' %>
         </div>
-        <div class="subject_c" style="color: rgb(165, 41, 3);">
-          <small class="_13dbiegr"><span style="color: rgb(165, 41, 3);">
-                <h3><%= teacher.subject.name.capitalize%></h3>
-              </span>
-            </small>
+        <div class="subject-color-cards" style="color: rgb(165, 41, 3);">
+          <h3><%= teacher.subject.name.capitalize%></h3>
+          </span>
         </div>
-        <div class="subject_d">
+        <div class="subject-description">
           <h2><%= "Learn #{teacher.subject.name.capitalize} From #{teacher.name}" %></h2>
         </div>
       </div>
