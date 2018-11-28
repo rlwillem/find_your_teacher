@@ -3,7 +3,7 @@ class Teacher < ApplicationRecord
   belongs_to :subject
   belongs_to :user
   has_many :appointments
-  validates :name,  presence: true
+  validates :name, presence: true
   validates :description, presence: true
   validates :subject, presence: true
   # has_many :users through: :appointments
