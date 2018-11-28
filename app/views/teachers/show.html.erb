@@ -3,11 +3,15 @@
     <div class="left-column">
       <%#=  cl_image_tag @teacher.picture, height: 400, width: 400 %>
       <h3>Subject taught</h3>
-      <p><%= @teacher.subject.name.capitalize %></p>
+      <p>
+        <%= @teacher.subject.name.capitalize %>
+      </p>
     </div>
     <div class="left-column">
       <h3>Lesson Description</h3>
-      <p><%= @teacher.description %></p>
+      <p>
+        <%= @teacher.description %>
+      </p>
       <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
       <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
       <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
@@ -18,19 +22,25 @@
     </div>
   </div>
   <div class="flex-info">
-    <div class="right-column"><%#=  cl_image_tag @teacher.picture, height: 400, width: 400 %>
+    <div class="right-column">
+      <%#=  cl_image_tag @teacher.picture, height: 400, width: 400 %>
       <h3>Teacher Profile</h3>
       <img src="https://via.placeholder.com/280" class="teacher-photo">
-      <div class="teacher-name"><%= name = @teacher.name.split(" ").map { |name| name.capitalize }.join(" ") %>
+      <div class="teacher-name">
+        <%= name = @teacher.name.split(" ").map { |name| name.capitalize }.join(" ") %>
       </div>
     </div>
     <div class="right-column">
-      <h3>Calendar</h3>
-      <img src="https://via.placeholder.com/300"></div>
-    <div class="right-column">
       <h3>Rate</h3>
       <img src="https://via.placeholder.com/300">
-      <p><%= link_to "Book Now!", new_teacher_appointment_path(@teacher), class: "btn btn-primary btn-lg book-now" %></p>
+    </div>
+      <div class="right-column">
+        <h3>Calendar</h3>
+        <form action="/appointments"></form>
+        <%= simple_form_for [@teacher, @appointment] do |f| %>
+        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, "Book now!", class: "btn btn-primary btn-lg book-now" %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
