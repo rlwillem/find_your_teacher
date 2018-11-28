@@ -2,6 +2,7 @@
 <%= f.input :name %>
 <%= f.input :description %>
 <%= f.association :subject, as: :select %>
+<%= f.input :rate %>
 <%= f.input :picture %>
 <%= f.input :picture_cache, as: :hidden %>
 <%= f.submit "Become a Teacher", class: "btn btn-primary"%>
