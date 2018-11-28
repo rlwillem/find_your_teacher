@@ -2,6 +2,11 @@
 //   text-align: center;
 // }
 
+.appointments-wrapper {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
 .appointments-container {
   max-width: 900px;
   margin: 50px auto;
