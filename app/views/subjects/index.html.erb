@@ -1,15 +1,3 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= image_path 'education.jpg' %>');">
-  <div class="banner-content">
-    <h1>Find Your Teacher</h1>
-    <p>You can learn from the local people now!</p>
-    <%= form_tag subjects_path, method: :get do %>
-    <div class="text_with_button">
-      <%= text_field_tag :query,params[:query],class: "form-control form-inline",placeholder: "What do you want to learn?" %>
-      <button class="btn-main-base btn-main-styled"> Search </button>
-      <% end %>
-    </div>
-  </div>
-</div>
 <div class="container">
   <h2>Our Teachers</h2>
   <div class="row">
