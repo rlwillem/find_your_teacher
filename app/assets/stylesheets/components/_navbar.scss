@@ -41,7 +41,7 @@
   font-size: 14px;
 }
 
-.navbar-wagon-link:hover {
+.navbar-wagon-link:hover, .navbar-wagon-link:focus {
   color: #da552f;
   text-decoration: none;
 }
@@ -80,25 +80,32 @@
   border-top: 1px solid #E6E6E6;
 }
 
+/* Navbar link */
+.navbar-teacher-link {
+  color: #EB5E55;
+  //#F88888
+  font-size: 14px;
+}
+
+.navbar-teacher-link:hover, .navbar-teacher-link:focus {
+  color: #a33c37;
+  text-decoration: none;
+}
+
 .left {
   display: flex;
-  height: 45px;
-  width: 300px;
+  height: 55px;
   font-family: 'Courgette', cursive;
 }
 
 .text_with_button {
   display: flex;
-}
-
-button {
-  background-color: rgba(0, 0, 0, 0);
-  background: none;
-  border: 0;
-  padding-left: 0;
+  margin-left: 12px;
+  height: 54px;
+  width: 400px;
 }
 
 input#query.form-control {
   width: 300px;
-  height: 45px;
+  height: 54px;
 }
