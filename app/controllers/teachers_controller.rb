@@ -1,10 +1,10 @@
 class TeachersController < ApplicationController
   def index
     if params[:query].present?
-      lowercase = params[:query]
-      subject = Subject.find_by(name: lowercase.downcase.capitalize)
-
+      # lowercase = params[:query]
+      subject = Subject.find_by(name: params[:query])
       @teachers = subject.teachers
+      # ("title ILIKE ?", "%#{params[:query]}%")
     else
       @teachers = Teacher.all
     end
