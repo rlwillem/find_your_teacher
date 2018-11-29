@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <div class="left">
-    <%= form_tag subjects_path, method: :get do %>
+    <%= form_tag teachers_path, method: :get do %>
     <div class="text_with_button">
       <%= text_field_tag :query,params[:query],class: "form-control",placeholder: "What do you want to learn?" %>
       <button>
@@ -14,6 +14,7 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
     <!-- Links when logged in -->
+    <%= link_to "Become a teacher", new_teacher_path, class: "navbar-wagon-item navbar-teacher-link" %>
     <%= link_to "Home", teachers_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Appointments", appointments_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <!-- Avatar with dropdown menu -->
