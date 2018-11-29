@@ -3,6 +3,10 @@ class AppointmentsController < ApplicationController
     @appointments = Appointment.where(user_id: current_user.id)
   end
 
+  def show
+    @appointment = Appointment.find(params[:id])
+  end
+
   def new
     @teacher = Teacher.find(params[:teacher_id])
     @appointment = Appointment.new
