@@ -4,6 +4,7 @@ class SubjectsController < ApplicationController
       subjects = Subject.where("name ILIKE ?", "%#{params[:query]}%")
       @teachers = []
       subjects.each do |subject|
+        @subject = subject
         @teachers << subject.teachers
       end
       @teachers = @teachers.flatten
