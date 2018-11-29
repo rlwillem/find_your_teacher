@@ -28,7 +28,7 @@
       <form action="/appointments"></form>
       <%= simple_form_for [@teacher, @appointment] do |f| %>
         <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.button :submit, "Book now!", class: "button btn-main-base btn-main-styled" %>
+        <%= f.submit "Book now!", class: "button btn-main-base btn-main-styled" %>
       <% end %>
     </div>
   </div>
