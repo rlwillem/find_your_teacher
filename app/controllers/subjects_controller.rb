@@ -7,6 +7,8 @@ class SubjectsController < ApplicationController
         @teachers << subject.teachers
       end
       @teachers = @teachers.flatten
+    else
+      @teachers = Teacher.all
     end
   end
 end
