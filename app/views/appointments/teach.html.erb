@@ -2,15 +2,15 @@
   <div class="appointments-container">
     <h1>Your appointments</h1>
     <div class="tabs">
-      <a href="<%= appointments_path %>" class="tab active" id="learn">Learning</a>
-      <a href="<%= teach_path %>" class="tab" id="teach">Teaching</a>
+      <a href="<%= appointments_path %>" class="tab" id="learn">Learning</a>
+      <a href="<%= teach_path %>" class="tab active" id="teach">Teaching</a>
     </div>
-    <ul class="inbox">
+    <ul class="inbox" id="inbox-teaching">
       <% @appointments.each do  |appointment| %>
       <li class="message">
-        <%=  cl_image_tag appointment.teacher.picture, class: "avatar-large" %>
+        <%=  image_tag "morty.png", class: "avatar-large" %>
         <div class="message-name">
-          <h3><%=  appointment.teacher.name %></h3>
+          <h3><%=  appointment.user.email %></h3>
         </div>
         <div class="message-body">
           <p><strong><%= "Subject: #{appointment.teacher.subject.name}  "  %></strong></p>
@@ -21,11 +21,12 @@
         <div class="message-status">
           <% case appointment.status %>
           <% when "pending" %>
-          <p class="status pending">Pending</p>
+          <%= link_to "Accept",accept_path(:id => appointment),:method => :patch, class: "btn btn-success btn-sm",id: "accept"  %>
+          <%= link_to "Decline", decline_path(:id => appointment),:method => :patch, class: "btn btn-danger btn-sm", id: "decline" %>
           <%when "accepted" %>
-          <p class="status accepted">Accepted</p>
+          <h5 class="status accepted">You have accepted</h5>
           <% when "declined" %>
-          <p class="status declined">Declined</p>
+          <h5 class="status declined">You have declined</h5>
           <%end %>
         </div>
       </li>
