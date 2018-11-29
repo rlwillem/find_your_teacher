@@ -1,0 +1,39 @@
+
+.btn-main-base {
+  text-decoration: none;
+}
+
+.btn-main-styled, .btn-main-styled:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #EB5E55;
+    font-weight: bold;
+    padding: 0px 20px;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    transition: background 0.3s ease;
+    transition-property: background;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.btn-main-styled:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #a33c37;
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+}
+
+.book {
+  margin-top: 30px;
+  padding: 10px 60px;
+}
+button {
+  background: none;
+  border: 0;
+}
+
+button:focus {outline:0;}
