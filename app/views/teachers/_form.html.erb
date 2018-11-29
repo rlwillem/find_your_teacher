@@ -1,14 +1,23 @@
 <%= simple_form_for(@teacher) do |f| %>
-<% if @teacher.errors.any? %>
-<div class="errors-container">
-  <ul>
-    <% @teacher.errors.full_messages.each do |message| %>
-    <li>
-      <%= message %>
-    </li>
-    <% end %>
-  </ul>
-</div>
+  <% if @teacher.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @teacher.errors.full_messages.each do |message| %>
+          <li>
+            <%= message %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <!-- [...] all the fields -->
 <% end %>
-<!-- [...] all the fields -->
+<%= simple_form_for [@teacher] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.association :subject, as: :select %>
+  <%= f.input :rate %>
+  <%= f.input :picture %>
+  <%= f.input :picture_cache, as: :hidden %>
+  <%= f.submit "Become a Teacher", class: "button btn-main-base btn-main-styled"%>
 <% end %>

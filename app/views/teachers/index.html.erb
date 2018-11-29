@@ -3,7 +3,7 @@
     <h1>Find Your Teacher</h1>
     <p>You can learn from the local people now!</p>
     <%= form_tag teachers_path, method: :get do %>
-      <div class="text_with_button">
+      <div class="banner-search-bar">
         <%= text_field_tag :query,params[:query],class: "form-control form-inline",placeholder: "What do you want to learn?" %>
         <button class="btn-main-base btn-main-styled"> Search </button>
       <% end %>
