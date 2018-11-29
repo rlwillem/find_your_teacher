@@ -5,14 +5,14 @@
 .appointments-wrapper {
   display: flex;
   align-items: center;
-  text-align: center;
-}
-.appointments-container {
-  max-width: 900px;
-  margin: 50px auto;
-  margin: 0;
-  margin-bottom: 100px;
+  justify-content: center;
   font-family: 'Varela Round', sans-serif;
+}
+
+.appointments-container {
+  flex: 0 0 800px;
+
+
 }
 
 // .appointments-container body {
