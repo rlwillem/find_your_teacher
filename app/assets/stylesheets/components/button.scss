@@ -8,7 +8,7 @@
     text-decoration: none;
     background-color: #EB5E55;
     font-weight: bold;
-    padding: 0px 20px;
+    padding: 0px 32px;
     border: 1px solid #cccccc;
     border-radius: 2px;
     transition: background 0.3s ease;
@@ -27,10 +27,11 @@
   border-radius: 2px;
 }
 
-.book {
-  margin-top: 30px;
+.button {
+  margin-top: 10px;
   padding: 10px 60px;
 }
+
 button {
   background: none;
   border: 0;

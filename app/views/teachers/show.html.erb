@@ -16,11 +16,11 @@
   <div class="flex-info">
     <div class="right-column">
       <h3><%= name = @teacher.name.split(" ").map { |name| name.capitalize }.join(" ") %></h3>
-      <%=  cl_image_tag @teacher.picture, height: 300, width: 300, crop: :fill, class: "teacher-photo" %>
+      <%=  cl_image_tag @teacher.picture, height: 250, width: 250, crop: :fill, class: "teacher-photo" %>
     </div>
     <div class="right-column">
       <h3>Rate</h3>
-      <p>My hourly rate is EUR <%= @teacher.rate %>.
+      <p>My hourly rate is $<%= @teacher.rate %>.
       </p>
     </div>
     <div class="right-column">
@@ -28,7 +28,7 @@
       <form action="/appointments"></form>
       <%= simple_form_for [@teacher, @appointment] do |f| %>
         <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.button :submit, "Book now!", class: "book btn-main-base btn-main-styled" %>
+        <%= f.button :submit, "Book now!", class: "button btn-main-base btn-main-styled" %>
       <% end %>
     </div>
   </div>
