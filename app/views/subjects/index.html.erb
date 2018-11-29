@@ -1,4 +1,5 @@
 <div class="container">
+  <% if @subject.present? %>
   <h2><%= "#{@subject[:name]} teachers: #{@teachers.count}" %></h2>
   <div class="row">
     <% @teachers.each do |teacher| %>
@@ -21,4 +22,7 @@
       </div>
       <% end %>
     </div>
+    <% else %>
+    <h2>No results found</h2>
+    <% end %>
   </div>
