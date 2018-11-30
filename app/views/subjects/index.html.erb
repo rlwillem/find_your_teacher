@@ -1,6 +1,6 @@
 <div class="container">
   <% if @subject.present? %>
-  <h2><%= "Result - Teachers: #{@teachers.count}" %></h2>
+  <h2><%= "Result - #{ pluralize @teachers.size, "Teacher" }" %></h2>
   <div class="row">
     <% @teachers.each do |teacher| %>
     <div class="col-xs-12 col-sm-3">
@@ -9,7 +9,7 @@
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?image=<%= array_image.sample %>');">
         <% else %>
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path teacher.picture%>');">
-          <%end %>
+          <% end %>
           <%= image_tag "#{teacher.subject.name.downcase}.png",height: 50, width: 55, :class => "style_image" %>
           <%= link_to "", teacher_path(teacher), class: 'card-link' %>
         </div>
@@ -22,14 +22,14 @@
           <h2>
             <% 5.times do %>
             <i class="fa fa-star" style="color: #cacccd"></i>
-            <%end %>
+            <% end %>
           </h2>
           <% else %>
           <h2>
           <% teacher.average_rating.times do  %>
 
             <i class="fa fa-star" style="color: #ffb400"></i>
-            <%end %>
+            <% end %>
             <% (5 - teacher.average_rating).times do %>
             <i class="fa fa-star" style="color: #cacccd"></i>
             <%end %>
