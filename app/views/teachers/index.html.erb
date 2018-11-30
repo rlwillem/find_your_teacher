@@ -2,12 +2,10 @@
   <div class="banner-content">
     <h1>Find Your Teacher</h1>
     <p>You can learn from the local people now!</p>
-
     <%= form_tag subjects_path, method: :get do %>
-      <div class="banner-search-bar">
-        <%= text_field_tag :query,params[:query],class: "form-control form-inline",placeholder: "What do you want to learn?" %>
-        <button class="btn-main-base btn-main-styled"> Search </button>
-
+    <div class="banner-search-bar">
+      <%= text_field_tag :query,params[:query],class: "form-control form-inline",placeholder: "What do you want to learn?" %>
+      <button class="btn-main-base btn-main-styled"> Search </button>
       <% end %>
     </div>
   </div>
@@ -31,8 +29,26 @@
         </div>
         <div class="subject-description">
           <h2><%= "Learn #{teacher.subject.name.capitalize} From #{teacher.name}" %></h2>
+          <%if teacher.average_rating.zero? %>
+          <h2>
+            <% 5.times do %>
+            <i class="fa fa-star" style="color: #cacccd"></i>
+            <%end %>
+          </h2>
+          <% else %>
+          <h2>
+          <% teacher.average_rating.times do  %>
+
+            <i class="fa fa-star" style="color: #ffb400"></i>
+            <%end %>
+            <% (5 - teacher.average_rating).times do %>
+            <i class="fa fa-star" style="color: #cacccd"></i>
+            <%end %>
+            </h2>
+          <%end %>
         </div>
       </div>
       <% end %>
     </div>
   </div>
+</div>
