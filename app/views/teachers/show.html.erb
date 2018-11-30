@@ -20,15 +20,21 @@
     </div>
     <div class="right-column">
       <h3>Rate</h3>
-      <p>My hourly rate is $<%= @teacher.rate %>.
+      <p>My hourly rate is $
+        <%= @teacher.rate %>.
       </p>
     </div>
     <div class="right-column">
+      <%if current_user.teachers.include?(@teacher) %>
+      <br>
+      <p>This is your profile</p>
+      <% else %>
       <h3>Calendar</h3>
       <form action="/appointments"></form>
       <%= simple_form_for [@teacher, @appointment] do |f| %>
-        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.submit "Book now!", class: "button btn-main-base btn-main-styled" %>
+      <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.submit "Book now!", class: "button btn-main-base btn-main-styled" %>
+      <% end %>
       <% end %>
     </div>
   </div>
