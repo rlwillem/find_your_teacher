@@ -1,6 +1,6 @@
 <div class="appointments-wrapper">
   <div class="appointments-container">
-    <h1>Your appointments</h1>
+    <h2>Your appointments</h2>
     <div class="tabs">
       <a href="<%= appointments_path %>" class="tab" id="learn">Learning</a>
       <a href="<%= teach_path %>" class="tab active" id="teach">Teaching</a>
@@ -24,9 +24,9 @@
           <%= link_to "Accept",accept_path(:id => appointment),:method => :patch, class: "btn btn-success btn-sm",id: "accept"  %>
           <%= link_to "Decline", decline_path(:id => appointment),:method => :patch, class: "btn btn-danger btn-sm", id: "decline" %>
           <%when "accepted" %>
-          <h5 class="status accepted">You have accepted</h5>
+          <p class="status accepted">You have accepted</p>
           <% when "declined" %>
-          <h5 class="status declined">You have declined</h5>
+          <p class="status declined">You have declined</p>
           <%end %>
         </div>
       </li>

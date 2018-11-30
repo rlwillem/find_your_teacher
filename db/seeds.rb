@@ -19,14 +19,14 @@ languages_array.each do |language|
   subject = Subject.new(name: language)
   subject.save
 end
-# puts "creating Teachers"
-# 30.times do
-#   teacher = Teacher.new(name: Faker::RickAndMorty.character, description: Faker::RickAndMorty.quote)
-#   teacher.subject = Subject.all.sample
-#   teacher.user = User.last
-#   teacher.rate = rate_array.sample
-#   teacher.save
-# end
+puts "creating Teachers"
+30.times do
+  teacher = Teacher.new(name: Faker::RickAndMorty.character, description: Faker::RickAndMorty.quote)
+  teacher.subject = Subject.all.sample
+  teacher.user = User.last
+  teacher.rate = rate_array.sample
+  teacher.save
+end
 # puts "creating appointments for user.first"
 # 5.times do
 #   appointment = Appointment.new(status: appointment_status.sample, date: DateTime.now.strftime("%A, %d %b %Y %l:%M %p"))
