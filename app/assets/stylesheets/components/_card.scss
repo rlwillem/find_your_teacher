@@ -1,3 +1,7 @@
+.row {
+  margin-top: -11px;
+}
+
 .card {
   height: 190px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
@@ -5,7 +9,7 @@
   background-position: center;
   color: white;
   position: relative;
-  margin: 40px 10px 5px 0px;
+  margin: 35px 10px 5px 0px;
 }
 
 .card-user {
@@ -59,10 +63,7 @@
   padding-left: 5px;
 }
 
-
 .subject-description h2 {
-
-
   font-family: 'Varela Round';
   font-size: 14px;
   margin-top: 2px;
@@ -77,9 +78,7 @@
 }
 
 .subject-color-cards h3 {
-
-
-  font-size: 16px;
+  font-size: 19px;
   margin-bottom: 1px;
   margin-top: 2px;
 }
