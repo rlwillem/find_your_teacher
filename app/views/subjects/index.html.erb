@@ -1,6 +1,6 @@
 <div class="container">
   <% if @subject.present? %>
-  <h2><%= "Result - teachers: #{@teachers.count}" %></h2>
+  <h2><%= "Result - Teachers: #{@teachers.count}" %></h2>
   <div class="row">
     <% @teachers.each do |teacher| %>
     <div class="col-xs-12 col-sm-3">
@@ -17,7 +17,7 @@
           <h3><%= teacher.subject.name.capitalize%></h3>
         </div>
         <div class="subject-description">
-          <h2><%= "Learn #{teacher.subject.name.capitalize} From #{teacher.name}" %></h2>
+          <h3><%= "Learn #{teacher.subject.name.capitalize} From #{teacher.name}" %></h3>
         </div>
       </div>
       <% end %>
