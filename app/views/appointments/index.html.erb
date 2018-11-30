@@ -1,6 +1,6 @@
 <div class="appointments-wrapper">
   <div class="appointments-container">
-    <h1>Your appointments</h1>
+    <h2>Your appointments</h2>
     <div class="tabs">
       <a href="<%= appointments_path %>" class="tab active" id="learn">Learning</a>
       <a href="<%= teach_path %>" class="tab" id="teach">Teaching</a>
@@ -8,7 +8,9 @@
     <ul class="inbox">
       <% @appointments.each do  |appointment| %>
       <li class="message">
-        <%=  cl_image_tag appointment.teacher.picture, class: "avatar-large" %>
+        <%= link_to appointment_path(appointment)  do %>
+        <%=cl_image_tag appointment.teacher.picture, class: "avatar-large" %>
+        <% end %>
         <div class="message-name">
           <h3><%=  appointment.teacher.name %></h3>
         </div>

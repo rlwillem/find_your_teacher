@@ -2,18 +2,16 @@
   <div class="banner-content">
     <h1>Find Your Teacher</h1>
     <p>You can learn from the local people now!</p>
-
     <%= form_tag subjects_path, method: :get do %>
-      <div class="banner-search-bar">
-        <%= text_field_tag :query,params[:query],class: "form-control form-inline",placeholder: "What do you want to learn?" %>
-        <button class="btn-main-base btn-main-styled"> Search </button>
-
+    <div class="banner-search-bar">
+      <%= text_field_tag :query,params[:query],class: "form-control form-inline",placeholder: "What do you want to learn?" %>
+      <button class="btn-main-base btn-main-styled"> Search </button>
       <% end %>
     </div>
   </div>
 </div>
 <div class="container">
-  <h2>Our Teachers</h2>
+  <h2>Learn languages from our teachers!</h2>
   <div class="row">
     <% @teachers.each do |teacher| %>
     <div class="col-xs-12 col-sm-3">
@@ -27,12 +25,29 @@
           <%= link_to "", teacher_path(teacher), class: 'card-link' %>
         </div>
         <div class="subject-color-cards" style="color: rgb(165, 41, 3);">
-          <h3><%= teacher.subject.name.capitalize%></h3>
+          <h3> <%= teacher.subject.name.capitalize%></h3>
         </div>
         <div class="subject-description">
           <h2><%= "Learn #{teacher.subject.name.capitalize} From #{teacher.name}" %></h2>
+          <%if teacher.average_rating.zero? %>
+          <h2>
+            <% 5.times do %>
+            <i class="fa fa-star" style="color: #cacccd"></i>
+            <%end %>
+          </h2>
+          <% else %>
+          <h2>
+          <% teacher.average_rating.times do  %>
+            <i class="fa fa-star" style="color: #ffb400"></i>
+            <%end %>
+            <% (5 - teacher.average_rating).times do %>
+            <i class="fa fa-star" style="color: #cacccd"></i>
+            <%end %>
+            </h2>
+          <%end %>
         </div>
       </div>
       <% end %>
     </div>
   </div>
+</div>

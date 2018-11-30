@@ -10,23 +10,32 @@
 }
 
 .banner h1 {
-  font-size: 50px;
+  width: 400px;
+  font-size: 46px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   font-family: Helvetica Neue;
+  margin-bottom: 5px;
 }
 
 .banner p {
-  font-size: 25px;
+  width: 400px;
+  font-size: 21px;
   font-weight: lighter;
   color: rgb(255, 255, 255);
   opacity: 0.6;
-  margin-bottom: 30px;
-  font-family: Pacifico;
+  margin-bottom: 10px;
+  font-family: 'Roboto Slab', serif;
   font-weight: bold;
 }
 
 .banner-search-bar {
   display: flex;
+  width: 400px;
   height: 50px;
+}
+
+.container h2 {
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
