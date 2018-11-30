@@ -26,7 +26,9 @@
     </div>
     <div class="right-column">
       <h3>Rate the teacher!</h3>
-      <%if @appointment.rating.nil? %>
+      <% if @appointment.status == "pending" || @appointment.status == "declined" %>
+      <p>You can't rate the teacher now.</p>
+      <%elsif @appointment.rating.nil? %>
       <%= simple_form_for [@appointment] do |f| %>
       <%= f.input :rating, as: :select, :collection => (1..5).to_a %>
       <%= f.button :submit, "Rate!", class: "book btn-main-base btn-main-styled" %>
