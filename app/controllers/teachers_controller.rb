@@ -22,6 +22,11 @@ class TeachersController < ApplicationController
     end
   end
 
+  def edit
+    raise
+    @teacher = Teacher.find(params)
+  end
+
   def update
     if @teacher.update(teacher_params)
       redirect_to teacher_path(@teacher)
@@ -30,15 +35,12 @@ class TeachersController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def delete
   end
 
   private
 
   def teacher_params
-    params.require(:teacher).permit(:name, :description, :subject_id, :picture, :rate)
+    params.require(:teacher).permit(:name, :description, :subject_id, :picture, :rate, :rating)
   end
 end
