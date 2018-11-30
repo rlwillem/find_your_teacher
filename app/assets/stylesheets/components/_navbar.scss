@@ -41,7 +41,8 @@
   font-size: 14px;
 }
 
-.navbar-wagon-link:hover, .navbar-wagon-link:focus {
+.navbar-wagon-link:hover,
+.navbar-wagon-link:focus {
   color: #da552f;
   text-decoration: none;
 }
@@ -87,7 +88,8 @@
   font-size: 14px;
 }
 
-.navbar-teacher-link:hover, .navbar-teacher-link:focus {
+.navbar-teacher-link:hover,
+.navbar-teacher-link:focus {
   color: #a33c37;
   text-decoration: none;
 }
@@ -95,17 +97,16 @@
 .left {
   display: flex;
   height: 55px;
-  font-family: 'Courgette', cursive;
 }
 
 .text_with_button {
   display: flex;
-  margin-left: 12px;
+  margin-left: -10px;
   height: 54px;
-  width: 400px;
+  width: 300px;
 }
 
 input#query.form-control {
   width: 300px;
-  height: 54px;
+  height: 50px;
 }

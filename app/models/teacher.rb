@@ -6,6 +6,7 @@ class Teacher < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :subject, presence: true
+  validates :rate, presence: true
   # has_many :users through: :appointments
 
   def average_rating
