@@ -1,37 +1,66 @@
 .flex-container {
   display: flex;
   justify-content: center;
-  padding: 4%;
-}
-
-.flex-info {
-  flex: 0 1 350px;
-  margin-left: 30px;
-}
-
-.flex-subject-description {
-  flex: 0 1 600px;
-  width: 600px;
+  padding: 2%;
+  h3 {
+    line-height: 40px;
+    color: #999999;
+  }
+  p {
+    color: #000000;
+    text-align: justify;
+  }
 }
 
 .teacher-photo {
-  border-radius: 50%;
+  // border-radius: 50%;
+}
+
+// Left side
+.left-column {
+  top: 0;
+  // padding-top: -10px;
+  // padding-left:15px;
+  // padding-right:15px;
+  padding: 0px 50px;
+  text-align: justify;
+  // border-top: 1px solid #000000;
+}
+
+.flex-subject-description {
+  flex: 0 1 450px;
+  background-color: #ffffff;
+  // border: 1px dotted #000000;
+}
+
+
+// Right side
+.flex-info {
+  flex: 0 1 300px;
+  background-color: #ffffff;
+  // margin-left: 30px;
+  // border: 1px dotted #000000;
 }
 
 .right-column {
   top: 0;
-  border-top: 1px solid #000000;
-  padding-top: -10px;
-  padding-left:15px;
-  padding-right:15px;
-  padding-bottom: 20px;
-  width: 280px;
-  text-align: center;
+  // border-top: 1px solid #000000;
+  label {
+    display: none;
+  }
+  padding: 0px 50px;
+
+  .form-group {
+    .form-control {
+      display: none !important;
+    }
+  }
 }
 
-.left-column {
-  padding-top: -10px;
-  padding-left:15px;
-  padding-right:15px;
-  border-top: 1px solid #000000;
+
+.flatpickr-calendar {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
 }
+
+
