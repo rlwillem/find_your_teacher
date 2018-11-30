@@ -28,9 +28,26 @@
           <h3><%= teacher.subject.name.capitalize%></h3>
         </div>
         <div class="subject-description">
-          <h3><%= "Learn #{teacher.subject.name.capitalize} From #{teacher.name}" %></h3>
+          <h2><%= "Learn #{teacher.subject.name.capitalize} From #{teacher.name}" %></h2>
+          <%if teacher.average_rating.zero? %>
+          <h2>
+            <% 5.times do %>
+            <i class="fa fa-star" style="color: #cacccd"></i>
+            <%end %>
+          </h2>
+          <% else %>
+          <h2>
+          <% teacher.average_rating.times do  %>
+            <i class="fa fa-star" style="color: #ffb400"></i>
+            <%end %>
+            <% (5 - teacher.average_rating).times do %>
+            <i class="fa fa-star" style="color: #cacccd"></i>
+            <%end %>
+            </h2>
+          <%end %>
         </div>
       </div>
       <% end %>
     </div>
   </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="flex-container">
+  <div class="flex-subject-description">
+    <div class="left-column">
+      <h3>Subject taught</h3>
+      <p>
+        <%= @appointment.teacher.subject.name.capitalize %>
+      </p>
+    </div>
+    <div class="left-column">
+      <h3>Lesson Description</h3>
+      <p>
+        <%= @appointment.teacher.description %>
+      </p>
+    </div>
+  </div>
+  <div class="flex-info">
+    <div class="right-column">
+      <h3><%= name = @appointment.teacher.name.split(" ").map { |name| name.capitalize }.join(" ") %></h3>
+      <%=  cl_image_tag @appointment.teacher.picture, height: 300, width: 300, crop: :fill, class: "teacher-photo" %>
+    </div>
+    <div class="right-column">
+      <h3>Rate</h3>
+      <p>My hourly rate is EUR
+        <%= @appointment.teacher.rate %>.
+      </p>
+    </div>
+    <div class="right-column">
+      <h3>Rate the teacher!</h3>
+      <%if @appointment.rating.nil? %>
+      <%= simple_form_for [@appointment] do |f| %>
+      <%= f.input :rating, as: :select, :collection => (1..5).to_a %>
+      <%= f.button :submit, "Rate!", class: "book btn-main-base btn-main-styled" %>
+      <% end %>
+      <% else %>
+      <p>You have assigned this teacher a rating of
+        <%=  @appointment.rating%>
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div>
