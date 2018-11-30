@@ -23,7 +23,6 @@ class TeachersController < ApplicationController
   end
 
   def edit
-    raise
     @teacher = Teacher.find(params)
   end
 
