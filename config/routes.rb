@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   resources :teachers do
     resources :appointments, only: [:new, :create]
   end
+
+  resources :appointments, only: [:index, :show, :update]
+
   resources :subjects, only: [:index]
-  resources :appointments, only: [:index, :edit ,:update]
+
   get 'teach', to: "appointments#teach"
   patch 'accept/:id', to: "appointments#accept", as: :accept
   patch 'decline/:id', to: "appointments#decline", as: :decline
