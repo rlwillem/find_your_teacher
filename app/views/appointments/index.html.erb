@@ -8,12 +8,12 @@
     <ul class="inbox">
       <% @appointments.each do  |appointment| %>
       <li class="message">
-        <%= link_to appointment_path
-        <%=  cl_image_tag appointment.teacher.picture, class: "avatar-large" %>
+        <%= link_to appointment_path(appointment)  do %>
+        <%=cl_image_tag appointment.teacher.picture, class: "avatar-large" %>
+        <% end %>
         <div class="message-name">
           <h3><%=  appointment.teacher.name %></h3>
         </div>
-        %>
         <div class="message-body">
           <p><strong><%= "Subject: #{appointment.teacher.subject.name}  "  %></strong></p>
           <p>

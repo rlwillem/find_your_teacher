@@ -11,13 +11,13 @@ class Teacher < ApplicationRecord
   def average_rating
     rating = 0
     number = 0
-    appointments do |appointment|
+    appointments.each do |appointment|
       unless appointment.rating.nil?
         rating += appointment.rating
         number += 1
       end
     end
-    rating = round(rating / number) unless rating.zero?
+    rating = (rating / number).round unless rating.zero?
     return rating
   end
 end

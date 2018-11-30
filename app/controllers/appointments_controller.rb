@@ -7,6 +7,15 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+    @appointment = Appointment.find(params[:id])
+    @appointment.update(appointment_params)
+    redirect_to appointment_path(@appointment)
+  end
+
   def new
     @teacher = Teacher.find(params[:teacher_id])
     @appointment = Appointment.new
@@ -41,6 +50,6 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:date)
+    params.require(:appointment).permit(:date, :rating)
   end
 end

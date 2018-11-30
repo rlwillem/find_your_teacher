@@ -30,10 +30,15 @@
         <div class="subject-description">
           <h2><%= "Learn #{teacher.subject.name.capitalize} From #{teacher.name}" %></h2>
           <%if teacher.average_rating.zero? %>
-          <p>no rating</p>
-          <% else %>
-          <% teacher.average_rating.times do  %>
           <h2>
+            <% 5.times do %>
+            <i class="fa fa-star" style="color: #cacccd"></i>
+            <%end %>
+          </h2>
+          <% else %>
+          <h2>
+          <% teacher.average_rating.times do  %>
+
             <i class="fa fa-star" style="color: #ffb400"></i>
             <%end %>
             <% (5 - teacher.average_rating).times do %>
