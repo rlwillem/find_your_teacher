@@ -2,10 +2,12 @@
   display: flex;
   justify-content: center;
   padding: 2%;
+
   h3 {
     line-height: 40px;
     color: #999999;
   }
+
   p {
     color: #000000;
     text-align: justify;
@@ -44,10 +46,12 @@
 
 .right-column {
   top: 0;
+
   // border-top: 1px solid #000000;
   label {
     display: none;
   }
+
   padding: 0px 50px;
 
   .form-group {
@@ -57,10 +61,9 @@
   }
 }
 
+.right-column-appointments {}
 
 .flatpickr-calendar {
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
 }
-
-

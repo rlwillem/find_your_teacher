@@ -12,19 +12,7 @@
         <%= @appointment.teacher.description %>
       </p>
     </div>
-  </div>
-  <div class="flex-info">
-    <div class="right-column">
-      <h3><%= name = @appointment.teacher.name.split(" ").map { |name| name.capitalize }.join(" ") %></h3>
-      <%=  cl_image_tag @appointment.teacher.picture, height: 300, width: 300, crop: :fill, class: "teacher-photo" %>
-    </div>
-    <div class="right-column">
-      <h3>Rate</h3>
-      <p>My hourly rate is EUR
-        <%= @appointment.teacher.rate %>.
-      </p>
-    </div>
-    <div class="right-column">
+    <div class="left-column">
       <h3>Rate the teacher!</h3>
       <% if @appointment.status == "pending" || @appointment.status == "declined" %>
       <p>You can't rate the teacher now.</p>
@@ -38,6 +26,18 @@
         <%=  @appointment.rating%>
       </p>
       <% end %>
+    </div>
+  </div>
+  <div class="flex-info">
+    <div class="right-column">
+      <h3><%= name = @appointment.teacher.name.split(" ").map { |name| name.capitalize }.join(" ") %></h3>
+      <%=  cl_image_tag @appointment.teacher.picture, height: 300, width: 300, crop: :fill, class: "teacher-photo" %>
+    </div>
+    <div class="right-column">
+      <h3>Rate</h3>
+      <p>My hourly rate is EUR
+        <%= @appointment.teacher.rate %>.
+      </p>
     </div>
   </div>
 </div>
