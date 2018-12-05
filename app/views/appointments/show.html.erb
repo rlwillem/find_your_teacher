@@ -1,6 +1,10 @@
 <div class="flex-container">
   <div class="flex-subject-description">
     <div class="left-column">
+      <h3><%= name = @appointment.teacher.name.split(" ").map { |name| name.capitalize }.join(" ") %></h3>
+      <%=  cl_image_tag @appointment.teacher.picture, height: 300, width: 300, crop: :fill, class: "teacher-photo" %>
+    </div>
+    <div class="left-column">
       <h3>Subject taught</h3>
       <p>
         <%= @appointment.teacher.subject.name.capitalize %>
@@ -29,10 +33,6 @@
     </div>
   </div>
   <div class="flex-info">
-    <div class="right-column">
-      <h3><%= name = @appointment.teacher.name.split(" ").map { |name| name.capitalize }.join(" ") %></h3>
-      <%=  cl_image_tag @appointment.teacher.picture, height: 300, width: 300, crop: :fill, class: "teacher-photo" %>
-    </div>
     <div class="right-column">
       <h3>Rate</h3>
       <p>My hourly rate is EUR
