@@ -1,3 +1,5 @@
+require "selenium-webdriver"
+
 class TeachersController < ApplicationController
   def index
     @teachers = Teacher.all
@@ -15,6 +17,17 @@ class TeachersController < ApplicationController
   def create
     @teacher = Teacher.new(teacher_params)
     @teacher.user = current_user
+     driver = Selenium::WebDriver.for :chrome
+
+    driver.navigate.to "https://www.inaturalist.org/computer_vision_demo"
+    file =  @teacher.picture.file.file
+
+    button = driver.find_element(:xpath => "//*[@id='app']/div/div/input")
+    button.send_key file
+    classify = driver.find_element(:class => "classify")
+    sleep(2)
+    classify.click
+    driver.quit
     if @teacher.save
       redirect_to teacher_path(@teacher)
     else
